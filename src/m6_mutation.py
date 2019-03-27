@@ -118,6 +118,13 @@ def check_argument(actual_argument_value, correct_argument_value):
 
 
 def RETURN_replace_negatives_by_zeros(numbers):
+    new_numbers=[]
+    for k in range(len(numbers)):
+        if numbers[k]<0:
+            new_numbers=new_numbers+[0]
+        else:
+            new_numbers=new_numbers+[numbers[k]]
+    return new_numbers
     """
     RETURNs a NEW list that is the same as the given list of numbers,
     but with each negative number in the list replaced by zero.
@@ -129,7 +136,7 @@ def RETURN_replace_negatives_by_zeros(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
@@ -172,6 +179,12 @@ def run_test_MUTATE_replace_negatives_by_zeros():
 
 
 def MUTATE_replace_negatives_by_zeros(numbers):
+    for k in range(len(numbers)):
+        if numbers[k]<0:
+            numbers[k]=0
+        else:
+            numbers[k]=numbers[k]
+
     """
     MUTATES the given list of numbers so that
     each negative number in the list is replaced by zero
