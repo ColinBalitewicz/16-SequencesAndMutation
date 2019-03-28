@@ -10,8 +10,8 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -78,6 +78,11 @@ def run_test_shortest_string():
 
 
 def shortest_string(strings):
+    smallest_string=strings[len(strings)-1]
+    for k in range(len(strings)-1,1,-1):
+        if len(strings[k-1])<=len(smallest_string):
+            smallest_string=strings[k-1]
+    return smallest_string
     """
     What comes in:
       -- a non-empty sequence of strings
@@ -149,6 +154,13 @@ def run_test_index_of_largest_number():
 
 
 def index_of_largest_number(numbers, n):
+    largest_number=numbers[0]
+    for k in range(0,n):
+        if k>0:
+            if numbers[k]>numbers[k-1]:
+                largest_number=numbers[k]
+
+
     """
     What comes in:
       -- a sequence of numbers
