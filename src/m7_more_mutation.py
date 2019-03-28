@@ -293,6 +293,9 @@ def run_test_MUTATE_circle():
 
 
 def MUTATE_circle(circle, color, n):
+    circle.center.x=circle.center.x+n
+    circle.fill_color=color
+
     """
     MUTATES the given circle, so that:
       1. its fill color becomes the given color, and
