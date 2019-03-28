@@ -108,7 +108,7 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -154,12 +154,13 @@ def run_test_index_of_largest_number():
 
 
 def index_of_largest_number(numbers, n):
-    largest_number=numbers[0]
+    largest_number_index=0
     for k in range(0,n):
         if k>0:
-            if numbers[k]>numbers[k-1]:
-                largest_number=numbers[k]
+            if numbers[k]>numbers[largest_number_index]:
+                largest_number_index=k
 
+    return largest_number_index
 
     """
     What comes in:
@@ -192,7 +193,7 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -230,6 +231,12 @@ def run_test_number_of_stutters():
 
 
 def number_of_stutters(s):
+    count=0
+    for k in range(len(s)):
+        if k<len(s)-1:
+            if s[k]==s[k+1]:
+                count=count+1
+    return count
     """
     What comes in:
       -- a string s
@@ -247,7 +254,7 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -292,6 +299,13 @@ def run_test_is_palindrome():
 
 
 def is_palindrome(s):
+    reverse=''
+    for k in range(len(s)-1,-1,-1):
+        reverse=reverse+str(s[k])
+    if reverse==s:
+        return True
+    else:
+        return False
     """
     What comes in:
       -- a string s that (in this simple version of the palindrome
@@ -320,7 +334,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -359,6 +373,11 @@ def run_test_count_same():
 
 
 def count_same(sequence1, sequence2):
+    count=0
+    for k in range(len(sequence1)):
+        if sequence1[k]==sequence2[k]:
+            count=count+1
+    return count
     """
     What comes in:
       -- two sequences that have the same length
@@ -387,7 +406,7 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
