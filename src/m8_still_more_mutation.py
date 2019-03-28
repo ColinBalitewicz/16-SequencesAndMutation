@@ -4,8 +4,8 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
@@ -111,6 +111,14 @@ def run_test_MUTATE_delete_negatives():
 
 
 def MUTATE_delete_negatives(numbers):
+    x=0
+    for _ in range(len(numbers)):
+        if numbers[x]<0:
+            del numbers[x]
+        else:
+            x=x+1
+
+
     """
     MUTATES the given list of numbers so that each negative number
     in the list is DELETED from the list.
